@@ -3,6 +3,7 @@ import {columnDefs, data, defaultColDef} from "./data";
 import {AgGridReact} from "ag-grid-react";
 import 'ag-grid-community/styles/ag-grid.css';
 import 'ag-grid-community/styles/ag-theme-alpine.css';
+import cls from './AgGrid.module.scss';
 
 export default class AgGrid extends React.Component {
     constructor(props) {
@@ -39,7 +40,7 @@ export default class AgGrid extends React.Component {
         return (
             <div>
                 <div>AgGrid table</div>
-                <div className='ag-theme-alpine' style={{height: 500}}>
+                <div className={`ag-theme-alpine ${cls.aggrid}`} >
                     <button onClick={this.pushMeClicked}>Reset selection</button>
                     <AgGridReact
                         ref={this.gridRef}
